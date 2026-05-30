@@ -1,0 +1,10 @@
+LXI H, 00A0H
+MVI M, 11H
+INX H
+MVI M, 22H
+
+MOV C, M
+DCX H
+
+MOV B, M
+HLT

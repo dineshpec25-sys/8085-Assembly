@@ -1,0 +1,16 @@
+MVI B, 5H
+MVI C, 0AH
+LXI H, 00A0H
+
+MOV M, B
+INX H
+
+MOV M, C
+DCX H
+
+MOV D, M
+INX H
+
+MOV E, M
+
+HLT
