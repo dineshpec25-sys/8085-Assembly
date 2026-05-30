@@ -1,0 +1,4 @@
+LXI H, 00A0H
+MVI M, 25H
+MOV A, M
+HLT
