@@ -23,7 +23,6 @@ int main()
 
     for(int i = 0; input[i] != '\0';)
     {
-        printf("%d\n", i);
         if(input[i] == ' ' && status == 0)
         {
             Destination[0] = input[++i];
