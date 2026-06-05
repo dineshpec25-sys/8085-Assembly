@@ -40,9 +40,9 @@ int MOV(char *input)
     }
     instruction[3] = '\0';
     
-    printf("Instruction : %s\n", instruction);
-    printf("Destination : %s\n", Destination);
-    printf("Source : %s\n", source);
+    // printf("Instruction : %s\n", instruction);
+    // printf("Destination : %s\n", Destination);
+    // printf("Source : %s\n", source);
     instruction_opcode(instruction, p);
     destination_machine_code(Destination, p);
     source_machine_code(source, p);
@@ -100,7 +100,7 @@ void destination_machine_code(char *des, uint8_t *p)
     }
     else
     {
-        printf("Error Accquaired !!!\n");
+        // printf("Error Accquaired !!!\n");
         return ;
     }
 
@@ -149,7 +149,7 @@ void source_machine_code(char *s, uint8_t *p)
     }
     else
     {
-        printf("Error Accquaired !!!\n");
+        // printf("Error Accquaired !!!\n");
         return ;
     }
 
