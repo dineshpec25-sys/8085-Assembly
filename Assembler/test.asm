@@ -1,0 +1,3 @@
+MOV A,B
+MOV A,C
+HLT

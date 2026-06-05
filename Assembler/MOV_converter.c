@@ -2,18 +2,16 @@
 #include <string.h>
 #include <stdint.h>
 
-uint8_t machinecode=0b00000000;
-void instruction_opcode(char *instruct);
-void destination_machine_code(char *des);
-void source_machine_code(char *s);
+void instruction_opcode(char *instruct, uint8_t *p);
+void destination_machine_code(char *des, uint8_t *p);
+void source_machine_code(char *s, uint8_t *p);
 
-int main()
+int MOV(char *input)
 {
-    char input[8];
-    fgets(input, 8, stdin);
+    uint8_t machinecode=0b00000000;
+    uint8_t *p=&machinecode;
 
     char instruction[4];
-    instruction[3] = '\0';
     char Destination[2];
     Destination[1]='\0';
     char source[2];
@@ -40,62 +38,65 @@ int main()
         }
 
     }
+    instruction[3] = '\0';
     
-    instruction_opcode(instruction);
-    destination_machine_code(Destination);
-    source_machine_code(source);
-    printf("%#x\n", machinecode);
+    printf("Instruction : %s\n", instruction);
+    printf("Destination : %s\n", Destination);
+    printf("Source : %s\n", source);
+    instruction_opcode(instruction, p);
+    destination_machine_code(Destination, p);
+    source_machine_code(source, p);
 
-    return 0;
+    return machinecode;
 }
 
-void instruction_opcode(char *instruct)
+void instruction_opcode(char *instruct, uint8_t *p)
 {
     if(!strcmp(instruct, "MOV"))
     {
-        machinecode |= (1 << 6);
+        *p |= (1 << 6);
     }
 }
 
-void destination_machine_code(char *des)
+void destination_machine_code(char *des, uint8_t *p)
 {
     if(!strcmp(des, "A"))
     {
-        machinecode |= (7 << 3);
+        *p |= (7 << 3);
     }
     else if(!strcmp(des, "B"))
     {
-        machinecode |= (0b000 << 3);
+        *p |= (0b000 << 3);
     }
 
     else if(!strcmp(des, "C"))
     {
-        machinecode |= (0b001 << 3);
+        *p |= (0b001 << 3);
     }
 
     else if(!strcmp(des, "D"))
     {
-        machinecode |= (0b010 << 3);
+        *p |= (0b010 << 3);
     }
 
     else if(!strcmp(des, "E"))
     {
-        machinecode |= (0b011 << 3);
+        *p |= (0b011 << 3);
     }
 
     else if(!strcmp(des, "H"))
     {
-        machinecode |= (0b100 << 3);
+        *p |= (0b100 << 3);
     }
 
     else if(!strcmp(des, "L"))
     {
-        machinecode |= (0b101 << 3);
+        *p |= (0b101 << 3);
     }
 
     else if(!strcmp(des, "M"))
     {
-        machinecode |= (0b110 << 3);
+        *p |= (0b110 << 3);
     }
     else
     {
@@ -106,45 +107,45 @@ void destination_machine_code(char *des)
     return ;
 }
 
-void source_machine_code(char *s)
+void source_machine_code(char *s, uint8_t *p)
 {
     if(!strcmp(s, "A"))
     {
-        machinecode |= (7 << 0);
+        *p |= (7 << 0);
     }
     else if(!strcmp(s, "B"))
     {
-        machinecode |= (0b000 << 0);
+        *p |= (0b000 << 0);
     }
 
     else if(!strcmp(s, "C"))
     {
-        machinecode |= (0b001 << 0);
+        *p |= (0b001 << 0);
     }
 
     else if(!strcmp(s, "D"))
     {
-        machinecode |= (0b010 << 0);
+        *p |= (0b010 << 0);
     }
 
     else if(!strcmp(s, "E"))
     {
-        machinecode |= (0b011 << 0);
+        *p |= (0b011 << 0);
     }
 
     else if(!strcmp(s, "H"))
     {
-        machinecode |= (0b100 << 0);
+        *p |= (0b100 << 0);
     }
 
     else if(!strcmp(s, "L"))
     {
-        machinecode |= (0b101 << 0);
+        *p |= (0b101 << 0);
     }
 
     else if(!strcmp(s, "M"))
     {
-        machinecode |= (0b110 << 0);
+        *p |= (0b110 << 0);
     }
     else
     {
