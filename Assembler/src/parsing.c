@@ -1,15 +1,8 @@
-#include <stdio.h>
-#include <string.h>
+#include </home/dinesh-p/8085-Assembly/Assembler/src/header.h>
 
-
-
-int main()
+uint8_t parsing(char *input)
 {
-    char input[8];
-    fgets(input, 8, stdin);
-
     char instruction[4];
-    instruction[3] = '\0';
     char Destination[2];
     Destination[1]='\0';
     char source[2];
@@ -19,7 +12,6 @@ int main()
 
     for(int i = 0; input[i] != '\0';)
     {
-        printf("%d\n", i);
         if(input[i] == ' ' && status == 0)
         {
             Destination[0] = input[++i];
@@ -37,10 +29,22 @@ int main()
         }
 
     }
-    printf("%s\n", input);
-    printf("Instruction : %s\n", instruction);
-    printf("Destination : %s\n", Destination);
-    printf("Source : %s\n", source);
+    instruction[3] = '\0';
+    // printf("%s\n", input);
+    // printf("Instruction : %s\n", instruction);
+    // printf("Destination : %s\n", Destination);
+    // printf("Source : %s\n", source);
 
-    return 0;
+    if(!strcmp(instruction, "HLT"))
+    {
+        return HLT();
+    }
+
+    return MOV(instruction, Destination, source);
+
+}
+
+uint8_t HLT()
+{
+    return 0b01110110;
 }
