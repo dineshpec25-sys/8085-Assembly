@@ -23,14 +23,14 @@ int main()
     uint8_t opcode;
     uint16_t LC = 0x0000;
 
-    fprintf(memory, "Line\tAddress\tMachine Code\tSource Code\n");
+    fprintf(memory, "Line\tAddress\t\tMachine Code\tSource Code\n");
     int n_line=0;
 
     while(fgets(line, 9, fp) != NULL)
     {
         opcode = parsing(line);
 
-        fprintf(memory, "%d\t\t%#04x\t%xH\t\t\t\t%s\n",n_line++, LC, opcode, line);
+        fprintf(memory, "%d\t\t%#04x\t\t%X\t\t\t\t%s\n",n_line++, LC, opcode, line);
         fprintf(hex_file, "%02X\n", opcode);
 
         LC++;

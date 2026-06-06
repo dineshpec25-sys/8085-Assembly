@@ -1,3 +1,6 @@
 MOV A,B
 MOV A,C
+MOV B,C
+MOV C,D
+MOV A,M
 HLT

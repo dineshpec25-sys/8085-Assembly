@@ -1,7 +1,13 @@
-Line	Address	Machine Code	Source Code
-0		0000	78H				MOV A,B
+Line	Address		Machine Code	Source Code
+0		0000		78				MOV A,B
 
-1		0x01	79H				MOV A,C
+1		0x01		79				MOV A,C
 
-2		0x02	76H				HLT
+2		0x02		41				MOV B,C
+
+3		0x03		4A				MOV C,D
+
+4		0x04		7E				MOV A,M
+
+5		0x05		76				HLT
 
