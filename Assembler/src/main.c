@@ -24,7 +24,7 @@ int main()
     uint16_t LC = 0x0000;
 
     fprintf(memory, "Line\tAddress\t\tMachine Code\tSource Code\n");
-    int n_line=0;
+    int n_line=1;
 
     while(fgets(line, 9, fp) != NULL)
     {

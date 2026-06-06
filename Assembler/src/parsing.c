@@ -39,6 +39,10 @@ uint8_t parsing(char *input)
     {
         return HLT();
     }
+    else if(!strcmp(instruction, "ADD"))
+    {
+        return ADD(instruction, Destination);
+    }
 
     return MOV(instruction, Destination, source);
 
