@@ -43,6 +43,18 @@ uint8_t parsing(char *input)
     {
         return ADD(instruction, Destination);
     }
+    else if(!strcmp(instruction, "SUB"))
+    {
+        return SUB(instruction, Destination);
+    }
+    else if(!strcmp(instruction, "INR"))
+    {
+        return INR(instruction, Destination);
+    }
+    else if(!strcmp(instruction, "DCR"))
+    {
+        return DCR(instruction, Destination);
+    }
 
     return MOV(instruction, Destination, source);
 
