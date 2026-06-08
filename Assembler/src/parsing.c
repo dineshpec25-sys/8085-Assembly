@@ -30,10 +30,10 @@ uint8_t parsing(char *input)
 
     }
     instruction[3] = '\0';
-    // printf("%s\n", input);
-    // printf("Instruction : %s\n", instruction);
-    // printf("Destination : %s\n", Destination);
-    // printf("Source : %s\n", source);
+    printf("%s\n", input);
+    printf("Instruction : %s\n", instruction);
+    printf("Destination : %s\n", Destination);
+    printf("Source : %s\n", source);
 
     if(!strcmp(instruction, "HLT"))
     {
