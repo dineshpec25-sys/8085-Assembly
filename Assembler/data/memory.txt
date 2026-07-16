@@ -9,8 +9,5 @@ Line	Address		Machine Code	Source Code
 
 5		0x04		1D				DCR E
 
-6		0x05		8				MVI C,25
-7		0x06		0				H
-
-8		0x07		76				HLT
+6		0x05		76				HLT
 
