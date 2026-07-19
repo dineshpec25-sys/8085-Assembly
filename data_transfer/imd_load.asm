@@ -1,0 +1,3 @@
+MVI A,0x45
+MVI B,0x9F
+HLT

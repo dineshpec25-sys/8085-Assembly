@@ -1,0 +1,3 @@
+MVI A,0x12
+STA 0x2050
+HLT

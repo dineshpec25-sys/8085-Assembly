@@ -1,0 +1,3 @@
+MVI A,0xB
+MOV B,A
+HLT
