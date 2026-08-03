@@ -1,5 +1,15 @@
 #include </home/dinesh-p/8085-Assembly/Assembler/src.2/include.h>
 
+char *parsing(char *input)
+{
+    char *ins;
+    ins = malloc(4 * sizeof(char));
+    
+    const char delimiter[] = " ";
+    *ins = strtok(input, delimiter); // This extracts the instruction to ins
+
+    return ins; // Send the ins to main
+}
 
 int main()
 {

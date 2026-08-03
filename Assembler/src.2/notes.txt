@@ -1,0 +1,8 @@
+1. I defined all the function and includes in the include.h
+2. The main() opens and creates the files and reads the .asm file line by line
+    and passes it to the praser() which return the ins which is the instruction of the opcode
+3. Again call a solve() passing the ins and line
+
+solve() // Pending reading hash table
+    1. In, this function a particular function is going to be called according to ins 
+    

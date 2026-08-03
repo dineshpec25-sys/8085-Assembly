@@ -3,4 +3,4 @@
 #include <stdint.h>
 
 char *parsing(char *input);
-uint8_t solve();
+uint8_t solve(char *input, char *ins);
