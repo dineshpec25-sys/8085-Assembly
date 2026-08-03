@@ -2,5 +2,5 @@
 #include <string.h>
 #include <stdint.h>
 
-void parsing(char *input);
+char *parsing(char *input);
 uint8_t solve();

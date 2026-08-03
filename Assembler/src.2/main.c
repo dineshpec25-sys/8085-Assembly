@@ -1,5 +1,6 @@
 #include </home/dinesh-p/8085-Assembly/Assembler/src.2/include.h>
 
+
 int main()
 {
     char line[9]; // I am going to exatct line by line from the file and store it in this string
@@ -28,9 +29,10 @@ int main()
 
     while(fgets(line, 9, fp) != NULL)
     {
-        parsing(line);
+        char *ins;
+        ins = parsing(line);
 
-        uint8_t opcode=solve();
+        uint8_t opcode=solve(line, ins);
         fprintf(hex_file, "%02X\n", opcode);
 
         LC++;
